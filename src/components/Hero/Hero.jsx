@@ -6,6 +6,12 @@ import AllParking from '../Popups/Parkings'
 export const Hero = () => {
   const [Parkings, setParkings] = useState(false);
   const CloseParking = () => setParkings(false);
+
+  const handleParkingSelect = (parkingId) => {
+    // Handle the parking selection here
+    console.log('Selected parking:', parkingId);
+    // You can add navigation or show more details about the selected parking
+  };
  
   return (
     <div className='hero'>
@@ -15,7 +21,7 @@ export const Hero = () => {
             <div className="search">
               <input type='text' placeholder='⚲ Enter your location'></input>
               <button type='button' onClick={() => setParkings(true)}>Search</button>
-              {Parkings && <AllParking CloseParking={CloseParking}/>}
+              {Parkings && <AllParking CloseParking={CloseParking} onParkingSelect={handleParkingSelect}/>}
             </div>
             
         </div>

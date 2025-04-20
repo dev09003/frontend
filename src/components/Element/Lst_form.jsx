@@ -11,9 +11,51 @@ function Lst_form() {
                     <label for="text">Location : </label>
                     <input type='text' name='location' className='design'></input>
                 </div>
+
+                {/* New Contact Number field */}
                 <div className="input-fld-design">
-                    <label for="image">Upload image (Parking space) : </label>
-                    <input type='file' name='image' className='design' accept="image/*"></input>
+                    <label for="contact">Contact Number : </label>
+                    <input 
+                        type='tel' 
+                        name='contact' 
+                        className='design' 
+                        pattern="[0-9]{10}"
+                        placeholder="Enter 10-digit number"
+                        required
+                    ></input>
+                </div>
+
+                {/* New Price field */}
+                <div className="input-fld-design">
+                    <label for="price">Price (per hour) : </label>
+                    <div className="price-input">
+                        <span className="currency">₹</span>
+                        <input 
+                            type='number' 
+                            name='price' 
+                            className='design' 
+                            min="1"
+                            placeholder="Enter amount"
+                            required
+                        ></input>
+                    </div>
+                </div>
+
+                <div className="input-fld-design">
+                    <label for="image">Upload images (Parking space) : </label>
+                    <input 
+                        type='file' 
+                        name='images' 
+                        className='design' 
+                        accept="image/*" 
+                        multiple
+                        onChange={(e) => {
+                            const files = Array.from(e.target.files);
+                            // You can handle the multiple files here
+                            console.log('Selected files:', files);
+                        }}
+                    ></input>
+                    <small>You can select multiple images by holding Ctrl/Cmd while selecting</small>
                 </div>
                 <div className="input-fld-design">
                         <label for="type">Select your area type:</label>

@@ -6,8 +6,16 @@ import garage_img from '../Assets/garage.jpeg'
 import star1_img from '../Assets/star(1).png'
 import star2_img from '../Assets/star(2).png'
 import star4_img from '../Assets/star(4).png'
+import { useNavigate } from 'react-router-dom';
 
 const AllParking = ({CloseParking}) => {
+  const navigate = useNavigate();
+
+  const handleRentClick = () => {
+    CloseParking();
+    navigate('/parking-details');
+  };
+
   return (
   <>
     <div className="modal-wrapper"></div>
@@ -21,10 +29,10 @@ const AllParking = ({CloseParking}) => {
             <div className="cards">
                 <div className="card1 hovering">
                     <img src={ansal_img} height='100px' width='100%'></img>
-                    <h5>ANSAL PLAZA MALL SHOPPING COMPLEX, Pari Chowk, Greater Noida, Uttar Pradesh</h5>
+                    <h5>DELTA 2, NEAR HOPE HOSPITAL, GREATER NOIDA</h5>
                     <img src={star4_img} height='13px' width='60px' id='rating'></img>
                     <h6>Tier 2</h6>
-                    <button>Rent (Rs.20/hr)</button>
+                    <button onClick={handleRentClick}>Rent (Rs.20/hr)</button>
                 </div>
                 <div className="card2 hovering">
                   <img src={expo_img} height='100px' width='100%'></img>

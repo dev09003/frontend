@@ -12,13 +12,14 @@ export const Navbar = () => {
         <div className="nav-logo">
             <img src={logo} alt="" height="30px" />
             <p>Park'kar</p>
+            
         </div>
         <ul className='nav-menu'>
             <li onClick={()=>{setMenu("space_booking")}}><Link style={{textDecoration: 'none'}} to="/" >Find Parking</Link>{menu==="space_booking"?<hr/>:<></>}</li>
             <li onClick={()=>{setMenu("space_listing")}}><Link style={{textDecoration: 'none'}} to="/creating">List Your Space</Link>{menu==="space_listing"?<hr/>:<></>}</li>
         </ul>
         <div className="nav-login">
-            <Link to="/login"><button>Login</button></Link>
+            <Link to="/login"><button>SignOut</button></Link>
         </div>
     </div>
   )
